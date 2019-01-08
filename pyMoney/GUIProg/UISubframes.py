@@ -1,5 +1,5 @@
 from .widgetsProg.wd_frames import *
-from pyMoney.modelsProg.models import enderecoIdent, Estab, CategEstab
+from pyMoney.Models.models import enderecoIdent, Estab, CategEstab
 
 
 class EnderFrame(Frame):

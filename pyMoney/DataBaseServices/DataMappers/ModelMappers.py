@@ -1,6 +1,6 @@
 from pyMoney.DataBaseServices.sqlite_APIs import ConnDB as sqliteDB
 from pyMoney.DataBaseServices.sqlite_APIs import ConnDBEnder as sqliteEnderDB
-from pyMoney.modelsProg.models import *
+from pyMoney.Models.models import *
 
 
 class DAO:

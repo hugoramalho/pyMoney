@@ -1,5 +1,4 @@
-from pyMoney.modelsProg.models import *
-from pyMoney.modelsProg.DAOs import *
+from pyMoney.DataBaseServices.DataMappers.ModelMappers import *
 from pyMoney.GUIProg.UIFrames import *
 from .exceptions import AppException
 

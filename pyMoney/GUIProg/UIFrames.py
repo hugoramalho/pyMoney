@@ -1,4 +1,4 @@
-from pyMoney.modelsProg.models import *
+from pyMoney.Models.models import *
 from .widgetsProg.wd_frames import *
 from .UISubframes import *
 # from pyMoney.controllerProg import controller
