@@ -1,5 +1,4 @@
-from GUIProg.gui_constr import *
-from .BDProg.pyMoney_BD_prog import conexao_BD_prog
+from pyMoney.controllerProg.controller import App_controller
 
 __author__ = "Ramalho, Hugo <ramalho.hg@gmail.com>"
 __copyright__ = "Copyright 2017 -  pyMoney"
@@ -13,8 +12,7 @@ __status__ = "Testing"
 def main():
     #root = Tk()
     #janela_app = root_constr(root)
-    con_bd = conexao_BD_prog()
-    app = App_controller(con_bd)
+    app = App_controller()
     app.mainloop()
     return 0
 
