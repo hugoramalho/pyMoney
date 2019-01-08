@@ -210,16 +210,13 @@ class App_controller(Tk):
     def update_model(self, model_obj):
         try:
             if type(model_obj) is gerencia:
-                geren_dao = gerenDAO()
-                geren_dao.update(model_obj)
+                gerenDAO().update(model_obj)
 
             elif type(model_obj) is cliente:
-                cliente_dao = clienteDAO()
-                cliente_dao.update(model_obj)
+                clienteDAO().update(model_obj)
 
             elif type(model_obj) is fornec:
-                fornec_DAO = fornecDAO()
-                fornec_DAO.update(model_obj)
+                fornecDAO().update(model_obj)
 
             elif type(model_obj) is c_conta:
                 conta_DAO = contaDAO()

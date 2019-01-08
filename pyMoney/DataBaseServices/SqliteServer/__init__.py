@@ -13,7 +13,7 @@ itens_servs(id , nome, descricao, id_espec, id_fornec)
 class ConnDB:
     def __init__(self):
         try:
-            self.conn = sqlite3.connect(".\data_base\BD_prog.db")
+            self.conn = sqlite3.connect(".\DataBaseServices\SqliteServer\DB\BD_prog.db")
             self.con_status = True
             self.conn.commit()
             self.cursor = self.conn.cursor()
@@ -27,7 +27,7 @@ class ConnDB:
     def __conect_BD__(self):
         try:
             if (self.con_status == False):
-                self.conn = sqlite3.connect(".\data_base\BD_prog.db")
+                self.conn = sqlite3.connect(".\DataBaseServices\SqliteServer\DB\BD_prog.db")
                 self.con_status = True
                 self.conn.commit()
                 self.cursor = self.conn.cursor()

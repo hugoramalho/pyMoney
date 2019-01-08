@@ -1,5 +1,5 @@
-from pyMoney.DataBaseServices.sqlite_APIs import ConnDB as sqliteDB
-from pyMoney.DataBaseServices.sqlite_APIs import ConnDBEnder as sqliteEnderDB
+from pyMoney.DataBaseServices.SqliteServer import ConnDB as sqliteDB
+from pyMoney.DataBaseServices.SqliteServer import ConnDBEnder as sqliteEnderDB
 from pyMoney.Models.models import *
 
 
