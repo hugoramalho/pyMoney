@@ -1,4 +1,4 @@
-from pyMoney.DataBaseServices.sqlite_APIs import *
+from pyMoney.DataBaseServices.SqliteServer import *
 
 BDProg = ConnDB()
 
@@ -26,17 +26,16 @@ def load_all(class_name, **kwargs):
 
     elif class_name == 'c_move':
         pass
+
     elif class_name == 'referente':
         pass
+
     elif class_name == 'c_itemServ_ref':
         pass
-
-
 
     elif class_name == 'c_estab':
         lst_estabs = BDProg.fetchall_estabs(**kwargs)
         return lst_estabs
-
 
     elif class_name == 'c_fornec':
         lst_fornec = BDProg.fetchall_fornec(**kwargs)
@@ -48,8 +47,10 @@ def load_all(class_name, **kwargs):
 
     elif class_name == '':
         pass
+
     elif class_name == '':
         pass
+
     elif class_name == '':
         pass
 

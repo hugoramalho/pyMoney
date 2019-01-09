@@ -158,7 +158,20 @@ class itemDAO(DAO):
         return lst_itens
 
     def load(self, id_item = None):
-        pass
+        id_item = str(id_item)
+        sql = 'SELECT ID, NOME, DESCRICAO, CODIGO, ID_ESPECIE FROM itens WHERE ID = "' + id_item + '";'
+        tupl_db = self.__select_fetchone__(sql)
+        lst_itens = MyCollection()
+        if tupl_db is not None:
+            # TODO CRIAR OS DAOs DAS CLASSES DE ESPECIE, SUBCATEGORIA E CATEGORIA E ENTAO CARREGA-LOS NO ITEM
+            dic_item = {}
+            dic_item['idd'] = tupl_db[0]
+            dic_item['nome'] = tupl_db[1]
+            dic_item['descr'] = tupl_db[2]
+            dic_item['codigo'] = tupl_db[3]
+            item_aux = item(**dic_item)
+            lst_itens.append(item_aux)
+        return lst_itens
 
     def delete(self, id_item = None):
         pass
@@ -238,8 +251,21 @@ class servDAO(DAO):
             lst_serv.append(item_aux)
         return lst_serv
 
-    def load(self, id_item=None):
-        pass
+    def load(self, id_item:int)->dict:
+        id_item = str(id_item)
+        sql = 'SELECT ID, NOME, DESCRICAO, CODIGO, ID_ESPECIE FROM servicos WHERE ID = "' + id_item + '";'
+        tupl_db = self.__select_fetchone__(sql)
+        lst_serv = MyCollection()
+        if tupl_db is not None:
+            # TODO CRIAR OS DAOs DAS CLASSES DE ESPECIE, SUBCATEGORIA E CATEGORIA E ENTAO CARREGA-LOS NO ITEM
+            dic_item = {}
+            dic_item['idd'] = tupl_db[0]
+            dic_item['nome'] = tupl_db[1]
+            dic_item['descr'] = tupl_db[2]
+            dic_item['codigo'] = tupl_db[3]
+            item_aux = serv(**dic_item)
+            lst_serv.append(item_aux)
+        return lst_serv
 
     def delete(self, id_item=None):
         pass

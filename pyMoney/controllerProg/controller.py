@@ -104,8 +104,7 @@ class App_controller(Tk):
         return item_dao.search_code(code)
 
     def search_code_serv(self, code):
-        serv_dao = servDAO()
-        return serv_dao.search_code(code)
+        return servDAO().search_code(code)
 
     def search_CEP(self, cep):
         cep_dao = enderDAO()
@@ -284,8 +283,17 @@ class App_controller(Tk):
                 estab_DAO = estabDAO()
                 estab_DAO.insert(model_obj)
 
-
             elif type(model_obj) is transac:
+                print('Caiu aqui controller')
+                transac_DAO = transacDAO()
+                transac_DAO.insert(model_obj)
+
+            elif type(model_obj) is Categ:
+                print('Caiu aqui controller')
+                transac_DAO = transacDAO()
+                transac_DAO.insert(model_obj)
+
+            elif type(model_obj) is SubCateg:
                 print('Caiu aqui controller')
                 transac_DAO = transacDAO()
                 transac_DAO.insert(model_obj)

@@ -219,7 +219,7 @@ class ConnDB:
 class ConnDBEnder:
     def __init__(self):
         try:
-            self.conn = sqlite3.connect("BD_ender.db")
+            self.conn = sqlite3.connect(".\DataBaseServices\SqliteServer\DB\BD_ender.db")
             self.con_status = True
             self.conn.commit()
             self.cursor = self.conn.cursor()
@@ -232,7 +232,7 @@ class ConnDBEnder:
     def __conect_BD__(self):
         try:
             if (self.con_status == False):
-                self.conn = sqlite3.connect("BD_ender.db")
+                self.conn = sqlite3.connect(".\DataBaseServices\SqliteServer\DB\BD_ender.db")
                 self.con_status = True
                 self.conn.commit()
                 self.cursor = self.conn.cursor()

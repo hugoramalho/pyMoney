@@ -5,6 +5,7 @@ class Categ:
     def __init__(self, **kwargs):
         self.idd = kwargs.get('idd', None)
         self.nome = kwargs.get('nome', '')
+        self.tipo = kwargs.get('tipo', '')
 
     def update(self, **kwargs):
         self.nome = kwargs.get('nome', self.nome)
@@ -21,7 +22,6 @@ class Categ:
         dic_treeView['text'] = self.nome
         dic_treeView['values'] = []
         return dic_treeView
-
 
 class CategEstab(Categ):
     def __init__(self, **kwargs):

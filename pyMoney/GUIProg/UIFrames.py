@@ -505,7 +505,8 @@ class ItemServFrame(Frame):
         self.itens_treeView.headingText(4, 'Subcategoria')
         self.itens_treeView.headingText(5, 'Espécie')
             # Configurando .bind da Treeview:
-        self.itens_treeView.treeView.bind('<<TreeviewSelect>>', lambda event: self.bind_event1_treeView1(event))
+
+        self.itens_treeView.treeView.bind('<<TreeviewSelect>>', lambda event: self.edit_itemServ(event))
         self.itens_treeView.treeView.bind('<Button-3>', lambda event: self.bind_event2_treeView1(event))
         #self.itens_treeView.grid(row=2, column=0, columnspan=5, padx=10, sticky ='W')
 
@@ -583,7 +584,7 @@ class ItemServFrame(Frame):
     def bind_event2_treeView1(self, event):
         self.popup_menu(event)
 
-    def edit_itemServ(self):
+    def edit_itemServ(self, event):
         idd_item = self.itens_treeView.idd_selection_treeView()
         item_sel = self.lst_itens[idd_item]
         #edita_item = EditItemFrame(self, self.controller, item_sel)
@@ -2928,9 +2929,9 @@ class ins_compras_list_frame(Frame):
         self.grid()
         self.controller = controller
         self.ger_atv = controller.ger_atv
-        self.lst_estabs = self.ger_atv.load_estabs()
-        self.lst_itens = self.ger_atv.load_itens()
-        self.lst_servs = self.ger_atv.load_servs()
+        self.lst_estabs = self.controller.load_estabs()
+        self.lst_itens = self.controller.load_itens()
+        self.lst_servs = self.controller.load_servs()
 
         self.lst_compras = MyCollection()
         self.ref_compras = CompraItemServ()
